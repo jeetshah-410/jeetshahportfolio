@@ -43,37 +43,61 @@ const TAB_DATA = [
       </ul>
     )
   }
-]
+];
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
-  const [isPending ,startTransition] = useTransition(); 
+  const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
-    startTransition(() => { 
+    startTransition(() => {
       setTab(id);
-    })
-  }
+    });
+  };
 
   return (
-    <section className='text-white '>
-      <div className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'>
-        <Image 
-          src="/images/AboutMe.png" 
-          width={1000} 
-          height={1000} 
-          alt="Game developer's workstation setup with coding and level design software open"
-        />
-        <div className='mt-4 md:mt-0 text-left flex flex-col h-full'>
-          <h2 className='text-4xl font-bold text-white mb-4'>About Me</h2>
-          <p className='text-base lg:text-lg'>As a dedicated game developer, I specialize in bringing game worlds to life through the art of programming and the intricacies of level design. With every project, I strive to create immersive experiences that are not only engaging but also technically polished. From crafting intuitive gameplay mechanics to designing levels that challenge and inspire, I am deeply committed to every phase of development. My expertise lies in translating complex ideas into dynamic, playable worlds where players can explore, strategize, and lose themselves in the journey. Driven by a passion for innovation and storytelling, I’m constantly pushing the boundaries of what games can achieve, one level at a time.</p>
-          <div className='flex flex-row justify-start mt-8'>
+    <section className="text-white">
+      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+        {/* Left side with Image */}
+        <div>
+          <Image
+            src="/images/AboutMe.png"
+            width={1000}
+            height={1000}
+            alt="Game developer's workstation setup with coding and level design software open"
+          />
+        </div>
+
+        {/* Right side with Text, Tabs and Skills */}
+        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+          <p className="text-base lg:text-lg">
+            As a dedicated game developer, I specialize in bringing game worlds to life through the art of programming and the intricacies of level design.
+            {/* More text */}
+          </p>
+          <div className="flex flex-row justify-start mt-8">
             <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}> Skills </TabButton>
             <TabButton selectTab={() => handleTabChange("education")} active={tab === "education"}> Education </TabButton>
             <TabButton selectTab={() => handleTabChange("certifications")} active={tab === "certifications"}> Certifications </TabButton>
           </div>
-          <div className='mt-8'>{TAB_DATA.find((t) => t.id === tab).content}</div>
+          <div className="mt-8">{TAB_DATA.find((t) => t.id === tab).content}</div>
         </div>
+      </div>
+
+      {/* This is the grey gradient block below the image */}
+      <div className="bg-gradient-to-r from-blue-600 via-teal-600 to-green-600 p-8">
+        {tab === "skills" && (
+          <div className="flex justify-center gap-8">
+            {/* Example Logos, replace with your actual logo paths */}
+            <Image src="/images/unreal-logo.png" alt="Unreal Engine Logo" width={40} height={40} />
+            <Image src="/images/unity-logo.png" alt="Unity Engine Logo" width={40} height={40} />
+            <Image src="/images/blender-logo.png" alt="Blender Logo" width={40} height={40} />
+            <Image src="/images/cplusplus-logo.png" alt="C++ Logo" width={40} height={40} />
+            <Image src="/images/csharp.png" alt="C# Logo" width={40} height={40} />
+            <Image src="/images/python-logo.png" alt="Python Logo" width={40} height={40} />
+            <Image src="/images/java.png" alt="Java Logo" width={40} height={40} />
+          </div>
+        )}
       </div>
     </section>
   );
