@@ -1,6 +1,6 @@
 import React from 'react'
-import LinkedinIcon from "/public/images/icons8-linkedin-30.svg";
-import GitHubIcon from "public/images/icons8-github.svg";
+import LinkedinIcon from "/../../../public/icons8-github.svg";
+import GitHubIcon from "/../../../public/icons8-github.svg";
 import Link from "next/link";
 import Image from "next/image";
 
