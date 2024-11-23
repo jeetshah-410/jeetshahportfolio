@@ -1,14 +1,15 @@
 "use client";
-import React, { useTransition, useState } from 'react';
+
+import React, { useTransition, useState } from "react";
 import Image from "next/image";
-import TabButton from './TabButton';
+import TabButton from "./TabButton";
 
 const TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
     content: (
-      <ul>
+      <ul className="list-disc ml-4">
         <li>Unreal Engine, Unity Engine</li>
         <li>C++, C#, Java, Python</li>
         <li>Blueprint Visual Scripting</li>
@@ -16,33 +17,30 @@ const TAB_DATA = [
         <li>Level Design</li>
         <li>Gameplay Mechanics Design</li>
         <li>Physics and Animation Blending</li>
-        <li>Optimization</li>
         <li>Multiplayer Deployment</li>
-        <li>Mixed Reality</li>
       </ul>
-    )
+    ),
   },
   {
     title: "Education",
     id: "education",
     content: (
-      <ul>
+      <ul className="list-disc ml-4">
         <li>B.E. Computer Engineering</li>
         <li>International Institute of Information Technology, Pune</li>
       </ul>
-    )
+    ),
   },
   {
     title: "Certifications",
     id: "certifications",
     content: (
-      <ul>
+      <ul className="list-disc ml-4">
         <li>Unreal Engine 5 C++ Developer</li>
         <li>Gameplay Ability Systems</li>
-        <li></li>
       </ul>
-    )
-  }
+    ),
+  },
 ];
 
 const AboutSection = () => {
@@ -65,10 +63,11 @@ const AboutSection = () => {
             width={1000}
             height={1000}
             alt="Game developer's workstation setup with coding and level design software open"
+            aria-label="Game developer's workstation"
           />
         </div>
 
-        {/* Right side with Text, Tabs and Skills */}
+        {/* Right side with Text, Tabs, and Skills */}
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
@@ -86,18 +85,25 @@ const AboutSection = () => {
 
       {/* This is the grey gradient block below the image */}
       <div className="bg-gradient-to-r from-blue-600 via-teal-600 to-green-600 p-8">
-        {tab === "skills" && (
-          <div className="flex justify-center gap-8">
-            {/* Example Logos, replace with your actual logo paths */}
-            <Image src="/images/unreal-logo.png" alt="Unreal Engine Logo" width={40} height={40} />
-            <Image src="/images/unity-logo.png" alt="Unity Engine Logo" width={40} height={40} />
-            <Image src="/images/blender-logo.png" alt="Blender Logo" width={40} height={40} />
-            <Image src="/images/cplusplus-logo.png" alt="C++ Logo" width={40} height={40} />
-            <Image src="/images/csharp.png" alt="C# Logo" width={40} height={40} />
-            <Image src="/images/python-logo.png" alt="Python Logo" width={40} height={40} />
-            <Image src="/images/java.png" alt="Java Logo" width={40} height={40} />
-          </div>
-        )}
+        {/* Logo Section: Always Visible */}
+        <div className="flex justify-center gap-8">
+          {[
+            { src: "/images/unreal-logo.png", alt: "Unreal Engine", tooltip: "Unreal Engine" },
+            { src: "/images/unity-logo.png", alt: "Unity Engine", tooltip: "Unity Engine" },
+            { src: "/images/blender-logo.png", alt: "Blender", tooltip: "Blender" },
+            { src: "/images/cplusplus-logo.png", alt: "C++", tooltip: "C++" },
+            { src: "/images/csharp.png", alt: "C#", tooltip: "C#" },
+            { src: "/images/python-logo.png", alt: "Python", tooltip: "Python" },
+            { src: "/images/java.png", alt: "Java", tooltip: "Java" },
+          ].map(({ src, alt, tooltip }, index) => (
+            <div key={index} className="relative group">
+              <Image src={src} alt={alt} width={40} height={40} />
+              <span className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {tooltip}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

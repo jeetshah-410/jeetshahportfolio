@@ -14,7 +14,7 @@ const EmailSection = () => {
       {/* Social Icons */}
       <div className="socials flex gap-4">
         {/* GitHub Icon with Gradient Border */}
-        <Link href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">
+        <Link href="https://github.com/jeetshah-410" target="_blank" rel="noopener noreferrer">
           <div className="icon-wrapper">
             <div className="icon-container">
               <Image src={GitHubIcon} alt="GitHub Icon" width={30} height={30} />
@@ -23,7 +23,7 @@ const EmailSection = () => {
         </Link>
 
         {/* LinkedIn Icon with Gradient Border */}
-        <Link href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+        <Link href="https://linkedin.com/in/jeet-shah-b2a845254" target="_blank" rel="noopener noreferrer">
           <div className="icon-wrapper">
             <div className="icon-container">
               <Image src={LinkedinIcon} alt="LinkedIn Icon" width={30} height={30} />
