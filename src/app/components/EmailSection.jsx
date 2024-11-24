@@ -8,25 +8,24 @@ const EmailSection = () => {
   const LinkedinIcon = "/icons8-linkedin-30.svg";
 
   return (
-    <section id='contact' className="flex flex-col items-center gap-6 py-12">
-      <h5 className="text-xl font-bold text-gray-200">Let us Connect</h5>
+    <section id="contact" className="flex flex-col items-center gap-4 py-8 px-4">
+      <h5 className="text-lg sm:text-xl font-bold text-gray-200">Let's Connect</h5>
 
       {/* Social Icons */}
       <div className="socials flex gap-4">
-        {/* GitHub Icon with Gradient Border */}
+        {/* GitHub Icon */}
         <Link href="https://github.com/jeetshah-410" target="_blank" rel="noopener noreferrer">
           <div className="icon-wrapper">
             <div className="icon-container">
-              <Image src={GitHubIcon} alt="GitHub Icon" width={30} height={30} />
+              <Image src={GitHubIcon} alt="GitHub Icon" width={25} height={25} />
             </div>
           </div>
         </Link>
-
-        {/* LinkedIn Icon with Gradient Border */}
+        {/* LinkedIn Icon */}
         <Link href="https://linkedin.com/in/jeet-shah-b2a845254" target="_blank" rel="noopener noreferrer">
           <div className="icon-wrapper">
             <div className="icon-container">
-              <Image src={LinkedinIcon} alt="LinkedIn Icon" width={30} height={30} />
+              <Image src={LinkedinIcon} alt="LinkedIn Icon" width={25} height={25} />
             </div>
           </div>
         </Link>
@@ -34,13 +33,13 @@ const EmailSection = () => {
 
       {/* Contact Info */}
       <div className="contact-info text-center">
-        <p className="text-gray-200">
+        <p className="text-sm sm:text-base text-gray-200">
           <span className="font-bold">Email:</span> jeetshah4103@gmail.com
         </p>
-        <p className="text-gray-200">
+        <p className="text-sm sm:text-base text-gray-200">
           <span className="font-bold">Phone:</span> +91 7822080576
         </p>
-        <p className="text-gray-200">
+        <p className="text-sm sm:text-base text-gray-200">
           <span className="font-bold">City:</span> Pune, India
         </p>
       </div>
@@ -48,24 +47,22 @@ const EmailSection = () => {
       {/* Styling */}
       <style jsx>{`
         .icon-wrapper {
-          background: linear-gradient(to right, #2563eb, #14b8a6, #22c55e); /* Gradient Border */
-          padding: 3px; /* Space for the border */
-          border-radius: 50%; /* Circular border */
+          background: linear-gradient(to right, #2563eb, #14b8a6, #22c55e);
+          padding: 3px;
+          border-radius: 50%;
         }
-
         .icon-container {
-          background: white; /* White background for the icon */
-          border-radius: 50%; /* Circular shape */
+          background: white;
+          border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 50px;
-          height: 50px;
-          transition: transform 0.2s ease-in-out; /* Animation on hover */
+          width: 40px;
+          height: 40px;
+          transition: transform 0.2s ease-in-out;
         }
-
         .icon-wrapper:hover .icon-container {
-          transform: scale(1.1); /* Slight zoom effect */
+          transform: scale(1.1);
         }
       `}</style>
     </section>

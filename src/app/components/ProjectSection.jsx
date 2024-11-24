@@ -11,7 +11,7 @@ const projectsData = [
         description: "An interactive mystery game built in Unreal Engine. Explore mind-bending puzzles and secrets.",
         videoUrl: "/videos/level3.mp4",
         tag: ["Game Programming", "Game Designing"],
-        detailedDescription: "This is a more detailed description of the 3D Mind Blender Mystery Game. It dives into the story, gameplay mechanics, and development process. ",
+        detailedDescription: "This is a horror theme based thriller level of a game that I have created using C++ and blueprints. In this level i have used Collision for Grabbing the objects using specific actor tags. I have also used lot of trigger components, used various sound effects for in the game.",
     },
     {
         id: 2,
