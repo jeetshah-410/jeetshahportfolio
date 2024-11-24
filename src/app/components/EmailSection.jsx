@@ -9,7 +9,7 @@ const EmailSection = () => {
 
   return (
     <section id="contact" className="flex flex-col items-center gap-4 py-8 px-4">
-      <h5 className="text-lg sm:text-xl font-bold text-gray-200">Let's Connect</h5>
+      <h5 className="text-lg sm:text-xl font-bold text-gray-200">Let us Connect</h5>
 
       {/* Social Icons */}
       <div className="socials flex gap-4">
