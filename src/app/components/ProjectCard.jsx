@@ -6,7 +6,7 @@ const ProjectCard = ({ project, onReadMoreClick }) => {
         <div className="bg-[#1e1e1e] p-6 rounded-lg shadow-lg">
             {/* Video at the top */}
             <div className="mb-4">
-                <video controls width="100%">
+                <video controls controlsList='nodownload' width="100%">
                     <source src={project.videoUrl} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
@@ -25,17 +25,6 @@ const ProjectCard = ({ project, onReadMoreClick }) => {
             >
                 Read More
             </button>
-
-            {/* Download button with padding */}
-            {project.downloadLink && (
-                <a
-                    href={project.downloadLink}
-                    download={project.title}  // This will use the title as the filename or you can provide a custom name
-                    className="inline-block text-white bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded-md"
-                >
-                    Download Game
-                </a>
-            )}
         </div>
     );
 };

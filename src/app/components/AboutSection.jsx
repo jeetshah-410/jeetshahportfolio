@@ -59,7 +59,7 @@ const AboutSection = () => {
         {/* Left side with Image */}
         <div>
             <Image
-                src="/images/AboutMe.png"
+                src="/Setup.jpg"
                 width={1000}
                 height={1000}
                 alt="Game developer's workstation setup"
